@@ -6,12 +6,13 @@ public class CalculoImc {
 
     Scanner ler = new Scanner(System.in);
 
-    double peso, altura, vlrIMC = 0;
-    String nome;
+    double peso = 0, altura = 0, vlrIMC = 0;
+    String nome = null;
     int pessoa = 0;
     
     while(pessoa < 2) {
     pessoa ++;
+    System.out.printf("\n=========CALCULO IMC DOS JOGADORES=========\n\n");
     System.out.printf("Informe o nome do paciente: ");
     nome = ler.next(); 
 
@@ -20,7 +21,10 @@ public class CalculoImc {
 
     System.out.printf("Informe a Altura do paciente: ");
     altura = ler.nextDouble(); 
-        
+    System.out.printf("\n===========================================\n\n");    
+    }
+   
+
     System.out.printf("\n========================================\n");
     vlrIMC = IMC(peso, altura);
     System.out.println("Nome do paciente: "+ nome);
@@ -29,7 +33,6 @@ public class CalculoImc {
     System.out.printf("IMC = %.2f \n", vlrIMC);
     System.out.printf("O paciente se encontra na categoria: \n    %s \n",interpretacaoIMC(vlrIMC));
     System.out.printf("========================================\n");
-    }
 }
 
   public static double IMC(double peso, double altura) {
@@ -50,6 +53,5 @@ public class CalculoImc {
     }else { 
          return("Obesidade grau III");
     }
-  }
-  
+  } 
 }
